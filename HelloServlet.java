@@ -1,13 +1,14 @@
 package com.example.sec2;
 
-import java.io.*;
+import java.io.IOException;
 import java.sql.SQLException;
-
 import com.example.dao.jdbc;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.annotation.WebServlet;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
+@WebServlet(name = "HelloServlet", value = "/login-servlet")
 public class HelloServlet extends HttpServlet {
     private String message;
 
@@ -31,9 +32,7 @@ public class HelloServlet extends HttpServlet {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
-
 
     public void destroy() {
     }
