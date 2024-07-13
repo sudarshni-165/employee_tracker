@@ -1,21 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: sudarshni
-  Date: 10/07/24
-  Time: 9:41 am
-  To change this template use File | Settings | File Templates.
---%>
-<%--
-  Created by IntelliJ IDEA.
-  User: sudarshni
-  Date: 10/07/24
-  Time: 9:41 am
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>next page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Page</title>
     <style>
         body, html {
             height: 100%;
@@ -54,28 +42,13 @@
     </style>
 </head>
 <body>
-<h1>Click to modify</h1>
+<h1>Click to Modify</h1>
 <div class="container">
     <div class="button-box">
-        <a href="operations.jsp"> <button >Add</button></a>
+        <a href="operations.jsp"><button>Add</button></a>
         <a href="useredit.jsp"><button>Edit</button></a>
         <a href="useredit.jsp"><button>Delete</button></a>
     </div>
 </div>
-
-<script>
-    function addAction() {
-        alert('Add button clicked');
-    }
-
-    function editAction() {
-        alert('Edit button clicked');
-    }
-
-    function deleteAction() {
-        alert('Delete button clicked');
-    }
-</script>
 </body>
 </html>
-
