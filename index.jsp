@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: sudarshni
-  Date: 10/07/24
-  Time: 12:33 am
-  To change this template use File | Settings | File Templates.
---%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +59,7 @@
 <div class="container">
     <div class="login-box">
         <h2>Login</h2>
-        <form action ="hello-servlet" method="post">
+        <form action="login-servlet" method="post">
             <input type="text" placeholder="User Id" name="accountNo" required>
             <input type="password" placeholder="Password" name="password" required>
             <button type="submit">Login</button>
