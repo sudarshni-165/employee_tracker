@@ -1,3 +1,4 @@
+package com.example.sec2;
 
 import com.example.dao.jdbc;
 
@@ -15,23 +16,26 @@ public class AddUserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.getWriter().println("Test Servlet is working");
 
-    String userId = request.getParameter("user_id");
+        String userId = request.getParameter("user_id");
         String password = request.getParameter("password");
-        String userName = request.getParameter("user_name");
+        String userName = request.getParameter("Employeename");
         String role = request.getParameter("role");
         String date = request.getParameter("date");
         String taskCategory = request.getParameter("task_category");
         String description = request.getParameter("description");
         String project = request.getParameter("project");
+        String startTime = request.getParameter("starttime");
+        String endTime = request.getParameter("endtime");
 
         response.setContentType("text/plain");
         PrintWriter out = response.getWriter();
 
-        if (!isValidUserId(userId)) {
+   if (!isValidUserId(userId)) {
+       out.println(userId);
             out.println("Invalid User ID: Must be an integer with up to 5 digits.");
             out.flush();
             return;
-        }
+       }
 
         if (!isValidPassword(password)) {
             out.println("Invalid Password: Must be an integer with up to 4 digits.");
@@ -42,32 +46,36 @@ public class AddUserServlet extends HttpServlet {
         try {
             jdbc j = new jdbc();
             boolean result = j.addUser(
-                    Integer.parseInt(userId),
+                    String.valueOf(Integer.parseInt(userId)),
                     password,
                     userName,
                     role,
                     date,
                     taskCategory,
                     description,
-                    project
+                    project,
+                    startTime,
+                    endTime
             );
 
             if (result) {
+                out.println(userName);
                 out.println("Success: Data received.");
             } else {
                 out.println("Failure: Failed to insert data.");
             }
         } catch (SQLException e) {
+
             out.println("Database error: " + e.getMessage());
         }
-
-
     }
 
     private boolean isValidUserId(String userId) {
+
         try {
             int id = Integer.parseInt(userId);
-            return String.valueOf(id).length() <= 5;
+            System.out.println(id);
+            return 10000 <= id && id <= 99999;
         } catch (NumberFormatException e) {
             return false;
         }
